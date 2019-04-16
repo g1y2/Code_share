@@ -1,0 +1,19 @@
+//<algorithm>标准库中中包含了min和max函数
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+int main()
+{   
+
+	int l, n, p, maxv = 0, minv = 0;
+	cin >> l >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> p;
+		maxv = max(maxv, max(p, l - p + 1));
+		minv = max(minv, min(p, 1 - p + l));
+	}
+	cout << minv << ' ' << maxv;
+	return 0;
+}
