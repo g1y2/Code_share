@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+int main()
+{
+	string s1, s2, str1, str2;
+	ofstream ap;
+	ap.open("text1.txt");
+	cin >> s1;
+	ap << s1;
+	ap.close();
+	ap.open("text2.txt");
+	cin >> s2;
+	ap << s2;
+	ap.close();
+	ifstream op;
+	op.open("text1.txt");
+	while (!op.eof())
+		str1 += op.get();
+	op.close();
+	op.open("text2.txt");
+	while (!op.eof())
+		str2 += op.get();
+	op.close();
+	if (str1 == str2)
+		cout << "Yes";
+	else
+		cout << "NO";
+	return 0;
+}
